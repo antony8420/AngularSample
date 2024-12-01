@@ -1,0 +1,10 @@
+
+.error:focus,
+.error {
+  border-color: #E91E63;
+
+}
+
+.invalid {
+  color: #E91E63;
+}

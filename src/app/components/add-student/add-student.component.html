@@ -1,0 +1,67 @@
+<h3>Add Student</h3>
+<div class="alert alert-primary fade show" role="alert" *ngIf="message">
+    <strong>Data Added successfully</strong>
+    <button type="button" class="btn-close" (click)="hideeMessage()" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<form [formGroup]="studentForm" (ngSubmit)="SaveData()">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control"
+            [ngClass]="{'error': studentForm.controls['name'].invalid && (studentForm.controls['name'].touched || studentForm.controls['name'].dirty )}"
+            placeholder="Enter Name" formControlName="name">
+        <div class="invalid"
+            *ngIf="studentForm.controls['name'].invalid && (studentForm.controls['name'].touched || studentForm.controls['name'].dirty )">
+            <span *ngIf="studentForm.controls['name'].errors?.['required']">* This is required Field</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mobile</label>
+        <input type="number" class="form-control" maxlength="9"
+            [ngClass]="{'error': studentForm.controls['mobile'].invalid && (studentForm.controls['mobile'].touched || studentForm.controls['mobile'].dirty )}"
+            placeholder="Enter Mobile" formControlName="mobile">
+        <div class="invalid"
+            *ngIf="studentForm.controls['mobile'].invalid && (studentForm.controls['mobile'].touched || studentForm.controls['mobile'].dirty )">
+            <span *ngIf="studentForm.controls['mobile'].errors?.['required']">* This is required Field</span>
+            <span *ngIf="studentForm.controls['mobile'].errors?.['minLength']">Mimimum lenght is 9</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control"
+            [ngClass]="{'error': studentForm.controls['email'].invalid && (studentForm.controls['email'].touched || studentForm.controls['email'].dirty )}"
+            placeholder="Enter email" formControlName="email">
+        <div class="invalid"
+            *ngIf="studentForm.controls['email'].invalid && (studentForm.controls['email'].touched || studentForm.controls['email'].dirty )">
+            <span *ngIf="studentForm.controls['email'].errors?.['required']">* This is required Field</span>
+            <span *ngIf="studentForm.controls['email'].errors?.['email']">Email format is not valid</span>
+        </div>
+    </div>
+    <div class="mb-3 dropdown">
+        <label class="form-label">Department</label>
+        <label>Department</label>
+        <select class="custom-select d-block w-100"
+            [ngClass]="{'error': studentForm.controls['department'].invalid && (studentForm.controls['department'].touched || studentForm.controls['department'].dirty )}"
+            formControlName="department">
+            <option value="">Choose...</option>
+            <option *ngFor="let dept of department" [ngValue]="dept.name">{{dept.name}}</option>
+        </select>
+        <div class="invalid"
+            *ngIf="studentForm.controls['department'].invalid && (studentForm.controls['department'].touched || studentForm.controls['department'].dirty )">
+            <span *ngIf="studentForm.controls['department'].errors?.['required']">* This is required Field</span>
+        </div>
+    </div>
+    <div class="mb-3 dropdown">
+        <label class="form-label">Gender</label>
+        <select class="custom-select d-block w-100"
+            [ngClass]="{'error': studentForm.controls['gender'].invalid && (studentForm.controls['gender'].touched || studentForm.controls['gender'].dirty )}"
+            formControlName="gender">
+            <option value="">Choose...</option>
+            <option *ngFor="let g of gender" [ngValue]="g.name">{{g.name}}</option>
+        </select>
+        <div class="invalid"
+            *ngIf="studentForm.controls['gender'].invalid && (studentForm.controls['gender'].touched || studentForm.controls['gender'].dirty )">
+            <span *ngIf="studentForm.controls['gender'].errors?.['required']">* This is required Field</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

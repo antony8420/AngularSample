@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Antony",
+      "password": "Test123",
+      "role": "Admin"
+    },
+    {
+      "id": 2,
+      "userName": "Arun",
+      "password": "Test123",
+      "role": "Student"
+    },
+    {
+      "id": "8a48",
+      "username": "josh",
+      "password": "123",
+      "role": "Admin"
+    },
+    {
+      "id": "437c",
+      "username": "AA",
+      "password": "123",
+      "role": "Admin"
+    }
+  ],
+  "students": [
+    {
+      "name": "antony1",
+      "mobile": 962528367,
+      "email": "sfsdf@g.com",
+      "department": "CSE",
+      "gender": "Male",
+      "id": "1065"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "department": [
+    {
+      "id": 1,
+      "name": "CSE"
+    },
+    {
+      "id": 2,
+      "name": "Mech"
+    },
+    {
+      "id": 3,
+      "name": "Civil"
+    }
+  ],
+  "gender": [
+    {
+      "id": 1,
+      "name": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Female"
+    }
+  ]
+}
